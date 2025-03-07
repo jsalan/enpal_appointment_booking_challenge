@@ -1,0 +1,14 @@
+services:
+  web_api:
+    container_name: enpal-coding-challenge-api
+    build: .
+    ports:
+      - 3000:8080
+    depends_on:
+      - "db"
+  db:
+    container_name: enpal-coding-challenge-db
+    build:
+      context: database/.
+    ports:
+      - 5432:5432
